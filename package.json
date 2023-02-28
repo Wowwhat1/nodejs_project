@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "watch": "sass -w src/resources/scss/app.scss src/public/css/app.css",
+    "watch": "sass -w src/resources/scss/app.scss src/public/css/_variables.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -22,7 +22,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "mongoose": "^6.9.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
