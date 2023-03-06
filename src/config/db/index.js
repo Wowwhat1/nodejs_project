@@ -1,16 +1,14 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 async function connect() {
     try {
-        const conn = await mongoose.connect('mongodb+srv://chienhuynh234:WD9yIqIE93yX3aNW@cluster0.hkglw0t.mongodb.net/atn_store?retryWrites=true&w=majority', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
+        await mongoose.connect('mongodb+srv://atnstore:atnstore@atn.zihi3wk.mongodb.net/atn_store?retryWrites=true&w=majority', {
+            useNewUrlParser : true,
+            useUnifiedTopology: true,
         });
-        console.log('Connected to database');
-        return conn.connection;
+        console.log('connect successfully');
     } catch (error) {
-        console.error('Failed to connect to database', error);
-        process.exit(1);
+        console.log('connect failed!!!');
     }
 }
 
-module.exports = { connect }
+module.exports = { connect };
