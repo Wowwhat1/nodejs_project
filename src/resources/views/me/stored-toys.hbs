@@ -1,0 +1,25 @@
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col" colspan="1">Description</th>
+            <th scope="col">Created at</th>
+            <th scope="col" colspan="3">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each toys}}
+        <tr>
+            <th scope="row">{{sum @index 1}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>
+                <a href="" class="btn btn-outline-danger w-100"><i class="bi bi-trash"></i>Delete</a>
+                <a href="/toys/{{this.slug}}/edit" class="btn btn-outline-primary w-100 mt-2"><i class="bi bi-pencil"></i>Edit</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
