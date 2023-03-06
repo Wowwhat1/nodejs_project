@@ -25,7 +25,8 @@
     "handlebars": "^4.7.7",
     "method-override": "^3.0.0",
     "mongoose": "^6.9.0",
-    "mongoose-slug-generator": "^1.0.4"
+    "mongoose-slug-generator": "^1.0.4",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
