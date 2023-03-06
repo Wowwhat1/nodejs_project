@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const handlebars = require('express-handlebars')
 const {json} = require("express");
 const app = express()
-const port = 3000
+const port = process.env.PORT || 7703
 
 const route = require('./routes')
 const db = require('./config/db')
