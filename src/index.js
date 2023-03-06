@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const handlebars = require('express-handlebars')
 const {json} = require("express");
 const app = express()
-const port = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 const route = require('./routes')
 const db = require('./config/db')
@@ -37,6 +37,6 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 // Routes init
 route(app)
 
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}`)
 })
