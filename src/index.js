@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
+const methodOverride = require('method-override')
 const handlebars = require('express-handlebars')
 const {json} = require("express");
 const app = express()
@@ -17,6 +18,8 @@ app.use(express.urlencoded({
     extended: true
 }))
 app.use(json())
+
+app.use(methodOverride('_method'))
 
 // HTTP logger
 app.use(morgan('combined'))

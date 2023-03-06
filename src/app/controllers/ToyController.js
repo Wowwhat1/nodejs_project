@@ -29,12 +29,18 @@ class ToyController {
     }
 
     // [GET] /toys/:id/edit
-    edit(res, req, next) {
-        const slug = req.params.slug; // convert object to string
-        Toy.findById(slug)
+    edit(req, res, next) {
+        Toy.findById(req.params.id)
             .then(toy => res.render('toys/edit', {
                 toy: mongooseToObject(toy)
             }))
+            .catch(next)
+    }
+
+    // [PUT] /toys/:id/update
+    update(req, res, next) {
+        Toy.updateOne({ _id: req.param.id }, req.body)
+            .then(() => res.redirect('/me/stored/toys'))
             .catch(next)
     }
 }
